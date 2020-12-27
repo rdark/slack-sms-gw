@@ -111,5 +111,5 @@ def decryption_instruction_message(encrypted_message: EncryptedMessage) -> Dict[
                   f'--output text --query Plaintext --encryption-context'
     context_str = ",".join([f"{k}={v}" for k, v in encrypted_message.encryption_context.items()])
     return {
-        "text": f'_Decrypt with:_ `{decrypt_cmd} {context_str} | base64 --decode | jq .`'
+        "text": f'_Decrypt with:_ `{decrypt_cmd} {context_str} | jq .`'
     }
